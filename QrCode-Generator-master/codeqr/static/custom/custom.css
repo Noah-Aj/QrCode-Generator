@@ -1,0 +1,25 @@
+.nav {
+    background-color: #33cc33;
+}
+
+.qr-btn {
+    background: #ffcc88;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.navlink {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navlink:hover, .navlink:focus {
+    color: #000;
+}
+
+.navlink.active {
+    background-color: #fff;
+    color: #000;
+}

@@ -1,0 +1,33 @@
+{% extends 'nav/nav.html' %}
+{% load static %}
+{% block nav %}
+
+        <div class="m-3 p-2">
+            <p class="p-2 text-center">
+                This is a simple <strong>Qr Code generator</strong>
+            </p>
+            <p class="text-center">
+                To try out, you simply put in your name, <br>click on generate qr code and you will get your
+                <br> qr code generated.
+            </p>
+            <div class="text-center">
+                <form method="POST" action="{% url 'user-code:home' %}">
+                    {% csrf_token %}
+                    <div class="form-group d-inline-block align-items-center justify-content-center">
+                        <input type="text" name="qr-text" class="form-control mb-4" placeholder="Enter your name...">
+                        <input type="submit" value="Generate Qr Code" class="btn btn-sm btn-outline-success">
+                    </div>
+                </form>
+            </div>
+
+            <!---- showthe generated qr code -------->
+            <div class="m-auto">
+                <div class="container">
+                    <div class="text-center">{{ svg|safe }}</div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}
